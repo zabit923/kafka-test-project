@@ -5,7 +5,6 @@ from environs import Env
 from pydantic import BaseModel
 from pydantic_settings import BaseSettings
 
-
 env = Env()
 env.read_env()
 
@@ -26,7 +25,7 @@ DB_PORT = env.int("DB_PORT")
 DB_DATABASE = env.str("POSTGRES_DB")
 
 
-KAFKA_BOOTSTRAP_SERVERS = "kafka:9093"
+KAFKA_BOOTSTRAP_SERVERS = "kafka:9092"
 if DEBUG:
     KAFKA_BOOTSTRAP_SERVERS = "localhost:9093"
 KAFKA_TOPIC = "Kafka"

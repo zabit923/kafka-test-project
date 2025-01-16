@@ -8,8 +8,6 @@ services:
       - "2181:2181"
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
-    volumes:
-      - ./src/core/kafka/bitnami/zookeeper:/bitnami/zookeeper
 
   kafka:
     image: "bitnami/kafka:latest"
@@ -30,8 +28,6 @@ services:
       - ALLOW_PLAINTEXT_LISTENER=yes
     depends_on:
       - zookeeper
-    volumes:
-      - ./src/core/kafka/bitnami/:/bitnami/kafka
 
   akhq:
     image: tchiotludo/akhq:latest

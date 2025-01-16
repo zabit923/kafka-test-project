@@ -29,4 +29,4 @@ COPY ./src /src
 
 EXPOSE 8000
 
-CMD ["poetry", "run", "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["bash", "-c", "poetry run alembic upgrade head && poetry run uvicorn app:app --host 0.0.0.0 --port 8000 --reload"]
